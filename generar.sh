@@ -4,14 +4,26 @@
 cambiarNombreFoto(){
 	LISTADO_NOMBRES_CANTIDAD=`wc -l dict.csv | cut -d " " -f 1`
 	LISTADO_NOMBRES_RANDOM_LINEA=$((1+$RANDOM%$LISTADO_NOMBRES_CANTIDAD))p
-	RANDOM_NOMBRE=`sed -n $LISTADO_NOMBRES_RANDOM_LINEA dict.csv | cut -d "," -f 1 | tr " " "_"`
-	mv $1 $RANDOM_NOMBRE 	
+	FOTO_RANDOM_NOMBRE=`sed -n $LISTADO_NOMBRES_RANDOM_LINEA dict.csv | cut -d "," -f 1 | tr " " "_"`
+	mv $1 $FOTO_RANDOM_NOMBRE 	
+}	
+comprimirFoto(){
+	jpegoptim $FOTO_RANDOM_NOMBRE
+}	
+obtenerSumaVerificacion(){
+	sha256sum $FOTO_RANDOM_NOMBRE >> sumaVerificacion
+}	
+moverFoto(){
+	mv $FOTO_RANDOM_NOMBRE ./imagenes_comprimidas
 }	
 descargarFotos(){
 	for I in `seq 1 $2`;do
 		wget $1
 		FOTO=`find -name "index.html?person"`
 		cambiarNombreFoto $FOTO
+		comprimirFoto 
+		obtenerSumaVerificacion 
+		moverFoto 
 		sleep 5
 	done
 }	
