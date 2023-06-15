@@ -1,6 +1,4 @@
 #!/bin/bash
-#LINK_NOMBRES=https://raw.githubusercontent.com/fernandezpablo85/name_suggestions/master/assets/dict.csv
-#wget $LINK_NOMBRES
 cambiarNombreImagen(){
 	LISTADO_NOMBRES_CANTIDAD=`wc -l dict.csv | cut -d " " -f 1`;
 	LISTADO_NOMBRES_RANDOM_LINEA=$((1+$RANDOM%$LISTADO_NOMBRES_CANTIDAD))p;
