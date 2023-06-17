@@ -28,7 +28,7 @@ generarImagenes(){
 	obtenerSumaVerificacion;
        rm -r lote_imagenes;	
 }	
-LINK_IMAGENES=https://source.unsplash.com/random/900×700/?person;
+LINK_IMAGEN=https://source.unsplash.com/random/900×700/?person;
 CANTIDAD=$1;
-generarImagenes $LINK_IMAGENES $CANTIDAD;
+generarImagenes $LINK_IMAGEN $CANTIDAD;
 exit 0
