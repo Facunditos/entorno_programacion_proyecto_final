@@ -15,7 +15,7 @@ obtenerSumaVerificacion(){
 	touch suma_verificacion;
 	sha256sum lote_imagenes.zip > suma_verificacion;
 }	
-descargarImagenes(){
+generarImagenes(){
 	mkdir lote_imagenes;
 	for I in `seq 1 $2`;do
 		wget $1;
@@ -30,5 +30,5 @@ descargarImagenes(){
 }	
 LINK_IMAGENES=https://source.unsplash.com/random/900×700/?person;
 CANTIDAD=$1;
-descargarImagenes $LINK_IMAGENES $CANTIDAD;
+generarImagenes $LINK_IMAGENES $CANTIDAD;
 exit 0
