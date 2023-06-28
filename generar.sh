@@ -13,7 +13,7 @@ comprimirImagenes(){
 }	
 obtenerSumaVerificacion(){
 	touch suma_verificacion;
-	sha256sum lote_imagenes.zip > suma_verificacion;
+	sha256sum lote_imagenes.zip > suma_verificacion.sha256;
 }	
 generarImagenes(){
 	mkdir lote_imagenes;
