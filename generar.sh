@@ -18,7 +18,7 @@ generarImagenes(){
 	mkdir lote_imagenes;
 	for I in `seq 1 $2`;do
 		wget $1;
-		IMAGEN=`find -name "index.html?person"`;
+		IMAGEN=`find -name "index.html"`;
 		cambiarNombreImagen $IMAGEN;
 		moverImagen; 
 		sleep 5;
@@ -27,7 +27,7 @@ generarImagenes(){
 	obtenerSumaVerificacion;
        rm -r lote_imagenes;	
 }	
-LINK_IMAGEN=https://source.unsplash.com/random/900×700/?person;
+LINK_IMAGEN=https://thispersondoesnotexist.com/;
 CANTIDAD=$1;
 generarImagenes $LINK_IMAGEN $CANTIDAD;
 exit 0
