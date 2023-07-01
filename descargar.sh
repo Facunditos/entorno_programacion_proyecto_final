@@ -1,28 +1,30 @@
 #!/bin/bash
 
-descargar() {
-imag_comp=$1
-suma_ver=$2
-
-#wget "$imag_comp"
-
-if md5sum "$imag_comp"; then
-echo "mmmmmatch"
-#exit 0
-else
-return 1
-fi
-
-[[ $imag_comp == *.tar.gz ]] && tar xf $imag_comp && echo "tar"
-[[ $imag_comp == *.zip ]] && unzip $imag_comp && echo "zip"
-[[ $imag_comp == *.tar.gz ]] || [[ $imag_comp == *.tar.gz ]] || exit 2
-
-#if [[ $imag_comp == *.tar.gz ]]; then
-#tar xf "$imag_comp" && echo "tar"
-#elif [[ $imag_comp == *.zip ]]; then
-#unzip "$imag_comp" && echo "zip"
-#else echo "Extension incorrecta" && return 1
-#fi
+obtenerNombreArchivosDescargados(){
+    ARCHIVO_LOTE_IMAGENES=`echo $1 | tr "/" "\n"| tail -n 1`;
+    ARCHIVO_SUMA_VERIFICACION_LOTE_IMAGENES=`echo $2 | tr "/" "\n"| tail -n 1`;
 }
 
-descargar "$1" "$2"
+comprobarIntegridadLoteImagenesDescargado(){
+    SUMA_VERIFICACION_LOTE_IMAGENES_DESCARGADO=`sha256sum $ARCHIVO_LOTE_IMAGENES`;
+    SUMA_VERIFICACION_PROVISTA_LOTE_IMAGENES_DESCARGADO=`cat $ARCHIVO_SUMA_VERIFICACION_LOTE_IMAGENES`;
+    if [ "$SUMA_VERIFICACION_LOTE_IMAGENES_DESCARGADO" != "$SUMA_VERIFICACION_PROVISTA_LOTE_IMAGENES_DESCARGADO" ];then
+        rm lote_imagenes.zip suma_verificacion.sha256;
+        echo "no pudo verificarse la integridad del lote de imágenes, por lo cual, se procedió a eliminarlo";
+        exit 1;
+    else
+	echo "lote de imágenes descargado con éxito"	    
+    fi;
+    
+}
+
+descargarArchivos(){	
+    wget $1 $2;	    
+}
+
+URL_LOTE_IMAGENES=$1;
+URL_SUMA_VERIFICACION_LOTE_IMAGENES=$2;
+descargarArchivos $1 $2;
+obtenerNombreArchivosDescargados $1 $2
+comprobarIntegridadLoteImagenesDescargado $1 $2;
+exit 0
