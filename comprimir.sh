@@ -11,6 +11,15 @@ crearListadoNombresValidosImagenes(){
 		fi;
 	done;	
 }	
+crearListadoNombresImagenesFinalizan_a(){
+	for IMAGEN in `ls ./lote_imagenes`;do
+		FINALIZA_a=`echo $IMAGEN | grep "a$"`;
+		if [ $FINALIZA_a ];then
+			echo $IMAGEN >> listadoNombresImagenesFinalizan_a;
+		fi;
+	done;	
+}	
 #crearListadoNombresImagenes;
-crearListadoNombresValidosImagenes;
+#crearListadoNombresValidosImagenes;
+crearListadoNombresImagenesFinalizan_a;
 exit 0
