@@ -19,7 +19,12 @@ crearListadoNombresImagenesFinalizan_a(){
 		fi;
 	done;	
 }	
-#crearListadoNombresImagenes;
-#crearListadoNombresValidosImagenes;
+comprimirArchivos(){
+	zip -j -r archivo ./{listadoNombresImagenes,listadoNombresValidosImagenes,listadoNombresImagenesFinalizan_a,lote_imagenes/*};
+	rm -r ./{listadoNombresImagenes,listadoNombresValidosImagenes,listadoNombresImagenesFinalizan_a,lote_imagenes}
+}
+crearListadoNombresImagenes;
+crearListadoNombresValidosImagenes;
 crearListadoNombresImagenesFinalizan_a;
+comprimirArchivos;
 exit 0

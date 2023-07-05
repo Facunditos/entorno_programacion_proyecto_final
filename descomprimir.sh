@@ -8,7 +8,8 @@ moverImagenesDescomprimidas(){
 descomprimirImagenes(){
 	if [ -f *.zip ];then
 		unzip *.zip;
-		moverImagenesDescomprimidas
+		moverImagenesDescomprimidas;
+		rm *.zip;
 	else	
 		echo "No se encontró el lote de imágenes, por ende, no se pudo descomprimir";
 		exit 1;
