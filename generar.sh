@@ -27,7 +27,7 @@ generarImagenes(){
 		IMAGEN=`find -name "index.html"`;
 		cambiarNombreImagen $IMAGEN;
 		moverImagen; 
-		sleep 5;
+		sleep 1;
 	done
 	comprimirImagenes;
 	obtenerSumaVerificacion;
