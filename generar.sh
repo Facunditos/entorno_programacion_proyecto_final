@@ -3,7 +3,8 @@
 cambiarNombreImagen(){
 	LISTADO_NOMBRES_CANTIDAD=`wc -l dict.csv | cut -d " " -f 1`;
 	LISTADO_NOMBRES_RANDOM_LINEA=$((1+$RANDOM%$LISTADO_NOMBRES_CANTIDAD))p;
-	IMAGEN_RANDOM_NOMBRE=`sed -n $LISTADO_NOMBRES_RANDOM_LINEA dict.csv | cut -d "," -f 1 | tr " " "_"`;
+	#IMAGEN_RANDOM_NOMBRE=`sed -n $LISTADO_NOMBRES_RANDOM_LINEA dict.csv | cut -d "," -f 1 | tr " " "_"`;
+	IMAGEN_RANDOM_NOMBRE=`sed -n $LISTADO_NOMBRES_RANDOM_LINEA dict.csv | cut -d "," -f 1 | tr -d " "`;
 	mv $1 $IMAGEN_RANDOM_NOMBRE; 	
 }
 
