@@ -15,5 +15,6 @@ descomprimirImagenes(){
 descomprimirImagenes;
 moverImagenesDescomprimidas;	
 rm *.zip;
+rm *.sha256;
 echo "las imágenes se descomprimieron y fueron guardadas en el directorio lote_imagenes, se procedió a eliminar el archivo comprimido";
 exit 0;

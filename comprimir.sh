@@ -3,6 +3,7 @@ crearListadoNombresImagenes(){
 	ls lote_imagenes > listadoNombresImagenes;
 }
 crearListadoNombresValidosImagenes(){
+	touch listadoNombresValidosImagenes;
 	for IMAGEN in `ls ./lote_imagenes`;do
 		RESOLUCION_IMAGEN=`file ./lote_imagenes/$IMAGEN | cut -d "," -f "8"`;
 		RESOLUCION_IMAGEN_NOMBRE_VALIDO="512x512"
@@ -12,6 +13,7 @@ crearListadoNombresValidosImagenes(){
 	done;	
 }	
 crearListadoNombresImagenesFinalizan_a(){
+	touch listadoNombresImagenesFinalizan_a;
 	for IMAGEN in `ls ./lote_imagenes`;do
 		FINALIZA_a=`echo $IMAGEN | grep "a$"`;
 		if [ $FINALIZA_a ];then

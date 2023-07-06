@@ -5,8 +5,8 @@ menu(){
 	echo "opción 1 - generar imágenes";
 	echo "opción 2 - descargar imágenes";
 	echo "opción 3 - descomprimir imágenes";
-	echo "opción 4 - procesar imágenes";
-	echo "opción 5 - comprimir imágenes";
+	echo "opción 4 - procesar imágenes con nombres válidos";
+	echo "opción 5 - comprimir imágenes y listas";
 	echo "opción 0 - salir del programa";
 }
 main (){
