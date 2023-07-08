@@ -31,7 +31,7 @@ main (){
 			./comprimir.sh;
 		;;
 		0)
-			echo "find del programa";
+			echo "fin del programa";
 			exit 0;
 		;;
 		*)
@@ -45,5 +45,4 @@ while [ $OPCION -ne 0 ];do
 	read -p "Ingrese la opción deseada " OPCION
 	main $OPCION
 done;
-echo "fin del programa";
 exit 0;

@@ -24,7 +24,7 @@ descargarArchivos(){
 
 URL_LOTE_IMAGENES=$1;
 URL_SUMA_VERIFICACION_LOTE_IMAGENES=$2;
-#descargarArchivos $1 $2;
+descargarArchivos $1 $2;
 obtenerNombreArchivosDescargados $1 $2
 comprobarIntegridadLoteImagenesDescargado $1 $2;
 exit 0
