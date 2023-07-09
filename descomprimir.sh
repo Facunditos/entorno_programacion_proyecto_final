@@ -5,7 +5,7 @@ moverImagenesDescomprimidas(){
 	mv $ARCHIVOS_JPEG ./lote_imagenes;
 }
 descomprimirImagenes(){
-	if [ -f *.zip ];then
+	if [ -f lote_imagenes.zip ];then
 		unzip *.zip;
 	else	
 		echo "No se encontró el lote de imágenes, por ende, no se pudo descomprimir";
