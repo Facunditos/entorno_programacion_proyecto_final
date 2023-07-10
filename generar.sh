@@ -1,5 +1,8 @@
 #!/bin/bash
-
+if [[ $# != 1 || ! $1 =~ ^[0-9]+$ ]];then
+        echo "no se pudo generar las imágenes, la cantidad de imágenes a generar no se indicó de manera correcta";
+	exit 1;
+fi;
 cambiarNombreImagen(){
 	LISTADO_NOMBRES_CANTIDAD=`wc -l dict.csv | cut -d " " -f 1`;
 	LISTADO_NOMBRES_RANDOM_LINEA=$((1+$RANDOM%$LISTADO_NOMBRES_CANTIDAD))p;
