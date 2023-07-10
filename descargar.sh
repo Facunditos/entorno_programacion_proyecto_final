@@ -1,5 +1,8 @@
 #!/bin/bash
-
+if [[ $# != 2 ]]; then
+	echo "faltó suministrar algunas de las url necesarias para proceder a descargar las imágenes";
+	exit 1;
+fi;	
 obtenerNombreArchivosDescargados(){
     ARCHIVO_LOTE_IMAGENES=`echo $1 | tr "/" "\n"| tail -n 1`;
     ARCHIVO_SUMA_VERIFICACION_LOTE_IMAGENES=`echo $2 | tr "/" "\n"| tail -n 1`;
