@@ -36,6 +36,7 @@ main (){
 		;;
 		*)
 			echo "opción incorrecta";
+			OPCION=1
 
 	esac;
 }

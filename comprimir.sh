@@ -23,7 +23,7 @@ crearListadoNombresImagenesFinalizan_a(){
 }	
 comprimirArchivos(){
 	zip -j -r archivo ./{listadoNombresImagenes,listadoNombresValidosImagenes,listadoNombresImagenesFinalizan_a,lote_imagenes/*};
-	rm -r ./{listadoNombresImagenes,listadoNombresValidosImagenes,listadoNombresImagenesFinalizan_a,lote_imagenes}
+	rm -r ./{listadoNombresImagenes,listadoNombresValidosImagenes,listadoNombresImagenesFinalizan_a,lote_imagenes};
 	mv archivo.zip ./carpetaCompartida;
 }
 crearListadoNombresImagenes;
