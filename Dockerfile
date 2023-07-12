@@ -9,4 +9,3 @@ RUN apt-get update && apt-get install -y \
     imagemagick	\
     && rm -rf /var/lib/apt/lists/*
 CMD ./menu.sh
-
