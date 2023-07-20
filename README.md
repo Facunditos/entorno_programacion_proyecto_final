@@ -9,4 +9,5 @@
 - Luego se debe indicar la opción 3 para descomprimirlas.
 - Luego la opción 4 para procesarlas.
 - Y finalmente la opción 5 para comprirmir las imágenes procesadas y para crear las listas con información relevante sobre estas imaǵenes.
-- Al cabo de salir del programa al indicar la opción 0, los archivos creados en el paso anterior estarán disponibles en esta carpeta de la máquina anfitriona: */var/containers/trabajo-final-entorno*
+- Salir del programa con la opción 0
+- Los archivos creados estarán disponibles en esta carpeta de la máquina anfitriona: */var/containers/trabajo-final-entorno*
