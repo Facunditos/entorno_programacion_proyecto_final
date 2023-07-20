@@ -1,5 +1,5 @@
 ## TUIA Entorno de Programación - Trabajo final
-### Programa desarrollado para generar o descargargar imágenes y luego procesarlas. Este programa se ejecuta dentro de un contenedor de docker, luego de su ejecución quedará disponible en la computadora anfitriona el archivo comprimido que contendrá las imágenes respectivas y también archivos de texto plano con información relevante sobre estas imágenes.   
+### Programa desarrollado para generar o descargar imágenes y luego procesarlas. Este programa se ejecuta dentro de un contenedor de docker, luego de su ejecución quedará disponible en la computadora anfitriona el archivo comprimido que contendrá las imágenes respectivas y también archivos de texto plano con información relevante sobre estas imágenes.   
 ## Comenzar:
 - Correr *git clone https://github.com/Facunditos/entorno_programacion_proyecto_final.git* para clonar el repositorio de GitHub en la máquina local.
 - Correr *docker build --tag ubuntu-trabajo-final-entorno:1 .* para crear la imagen de docker.
